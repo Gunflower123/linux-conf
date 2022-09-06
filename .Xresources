@@ -73,3 +73,10 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
+
+!! URLs
+!  https://linux.die.net/man/3/urxvtperl
+!  https://wiki.gentoo.org/wiki/Rxvt-unicode
+!  https://man.archlinux.org/man/urxvt.7
+!  https://man.archlinux.org/man/urxvt.1
+!  https://wiki.archlinux.org/title/rxvt-unicode
