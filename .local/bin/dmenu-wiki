@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Script name: dmenu-wiki
+# Description: Searches documentation within offline Arch wiki 
+# Dependencies: dmenu, arch-wiki-docs
+
+# Set flags "-e", "-u", "-o pipefail" causes script to fail and
+# prevents execution.
+set -euo pipefail
+
+# Variables - Create .html list
+wikidir="/usr/share/doc/arch-wiki/html/en/"
+wikidocs="$(find ${wikidir} -iname "*.html")"
+
+main() {
+    selection=$(printf '%s\n' "${wikidocs[@]}" | \
+	      cut -d '/' -f8- | \
+	      sed -e 's/_/ /g' -e 's/.html//g' | \
+	      dmenu -i -l 20 -p 'Arch Wiki Docs: ') || exit 1
+    if [ "$selection" ]; then
+        article=$(printf '%s\n' "${wikidir}${selection}.html" | sed 's/ /_/g')
+	xdg-open "${article}"
+    else
+        echo "Message: Program Terminated" && exit 0
+    fi
+}
+main
