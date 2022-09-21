@@ -2,7 +2,7 @@
 Base Artix installation with dinit system
 
 
-# Programs
+# Programs:
 
 # Required packages:  
 pulseaudio 16.1-1  
