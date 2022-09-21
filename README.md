@@ -1,4 +1,8 @@
-# linux-conf
+# linux-conf  
+# Base Artix installation with dinit system
+
+
+Programs
 Required packages:  
 pulseaudio 16.1-1  
 
