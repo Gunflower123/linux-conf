@@ -1,5 +1,5 @@
 # linux-conf  
-Base Artix installation with dinit system
+Base Artix installation with dinit system  
 `<Program> > /dev/null 2>&1 &`
 
 # Programs:
