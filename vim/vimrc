@@ -16,3 +16,12 @@ runtime! archlinux.vim
 
 " do not load defaults if ~/.vimrc is missing
 "let skip_defaults_vim=1
+
+set showmatch
+set number
+set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+inoremap jk <Esc>
+
+" Ex commands to run python3 on vim, use <F9> to run
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
