@@ -1,4 +1,7 @@
-# linux-conf  
+# Artix Linux Configurations
+
+## Usage
+## linux-conf  
 Base Artix installation with dinit system  
 `<Program> > /dev/null 2>&1 &`
 
@@ -13,12 +16,12 @@ mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run  
 ```
 
-# Programs:
+## Programs:
 opencv  
 matlab  
 brave  
 
-# Required packages:  
+## Required packages:  
 pulseaudio 16.1-1  
 
 Containing multiple config files for Linux programs
