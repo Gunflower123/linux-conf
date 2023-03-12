@@ -30,9 +30,8 @@ set smartindent autoindent
 inoremap jk <Esc>
 
 " Hightlight matching parentheses, include line-numbers, last command shown
-set showmatch number showcmd
-
-
+set showmatch number showcmd 
+set cursorline    "Highlight current line
 
 
 
