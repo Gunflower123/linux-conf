@@ -19,10 +19,14 @@ runtime! archlinux.vim
 
 syntax enable     "Enable syntax processing
 
+
+"**COLOURS**
 " Additional colour-schemes
 colorscheme badwolf
 set termguicolors
 
+
+"**TABBING**
 " Virtual-spaces per tab (editing) and shift, tab is spaced
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4
 " Smart-indenting at new-line, copy indents
@@ -30,6 +34,8 @@ set smartindent autoindent
 "Simplify ESC-sequence
 inoremap jk <Esc>
 
+
+"**UI-CONF**
 " Hightlight matching parentheses, include line-numbers, last command shown
 set showmatch number showcmd 
 set cursorline    "Highlight current line
@@ -38,16 +44,26 @@ filetype indent on    "Load filetype-specific indent files
 " Visual autocomplete for ex commands, minimise redraws
 set wildmenu lazyredraw
 
+
+"**SEARCHING**
 " Search automatically, highlight search
 set incsearch hlsearch
 " Turn off search highlights using SPACE
 nnoremap <leader><space> :nohlsearch<CR>
 
+
+"**FOLDING**
 " Enable folding, open folds by default, maxed-out folds
 set foldenable foldlevelstart=10 foldnestmax=10
 "Open/close folds
 nnoremap <space> za
 set foldmethod=indent   "Fold based on indenting
+
+
+"**MOVEMENT**
+"Vertical movement with visual lines
+nnoremap j gj
+nnoremap k gk
 
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
