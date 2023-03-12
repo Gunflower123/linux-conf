@@ -23,13 +23,18 @@ syntax enable     "Enable syntax processing
 colorscheme badwolf
 set termguicolors
 
-set showmatch
-set number      "Include numbering
 " Virtual-spaces per tab (editing) and shift, tab is spaced
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4
 " Smart-indenting at new-line, copy indents
 set smartindent autoindent
 inoremap jk <Esc>
+
+" Hightlight matching parentheses, include line-numbers, last command shown
+set showmatch number showcmd
+
+
+
+
 
 
 " Ex commands to run python3 on vim, use <F9> to run
