@@ -40,6 +40,8 @@ set wildmenu lazyredraw
 
 " Search automatically, highlight search
 set incsearch hlsearch
+" Turn off search highlights using SPACE
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
