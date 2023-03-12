@@ -27,6 +27,7 @@ set termguicolors
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4
 " Smart-indenting at new-line, copy indents
 set smartindent autoindent
+"Simplify ESC-sequence
 inoremap jk <Esc>
 
 " Hightlight matching parentheses, include line-numbers, last command shown
