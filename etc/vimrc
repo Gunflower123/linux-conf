@@ -64,6 +64,12 @@ set foldmethod=indent   "Fold based on indenting
 "Vertical movement with visual lines
 nnoremap j gj
 nnoremap k gk
+"Movement to line beginning/end 
+nnoremap B ^
+nnoremap E $
+"Remove OLD key-bindings
+nnoremap $ <nop>
+nnoremap ^ <nop>
 
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
