@@ -71,6 +71,10 @@ nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
 
+"Highlight last text
+nnoremap gV `[v`]
+
+"**COMPILER SPECIFIC**
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
