@@ -33,8 +33,9 @@ inoremap jk <Esc>
 set showmatch number showcmd 
 set cursorline    "Highlight current line
 
-
-
+filetype indent on    "Load filetype-specific indent files
+"Visual autocomplete for ex commands, minimise redraws
+set wildmenu lazyredraw
 
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
