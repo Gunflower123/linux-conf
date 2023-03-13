@@ -111,6 +111,21 @@ else
   let &t_EI="\<Esc>]50;CursorShape=0\x7"
 endif
 
+"Autographs - File Extensions
+augroup configgroup
+  autocmd!
+  autocmd VimEnter * highlight clear SignColumn
+  autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.rd :call <SID>StripTailingWhitespaces()
+  autocmd FileType java setlocal noexpandtab
+  autocmd FileType java setlocal list
+  autocmd FileType java setlocal listchars=tab:+\,eol:-
+  autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+  
+  autocmd FileType php setlocal expandtab
+  autocmd FileType php setlocal list
+  autocmd FileType php setlocal listchars=tab:+\,eol:-
+
+
 "**COMPILER SPECIFIC**
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
