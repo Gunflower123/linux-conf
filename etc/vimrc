@@ -157,7 +157,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 
-# CUSTOM-FUNCTIONALITY {{{
+" CUSTOM-FUNCTIONALITY {{{
 " Toggle between number and relative-number
 function! ToggleNumber()
   if(&relativenumber==1)
