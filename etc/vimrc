@@ -155,3 +155,27 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
+
+#**CUSTOM FUNCTIONALITY**
+" Toggle between number and relative-number
+function! ToggleNumber()
+  if(&relativenumber==1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunction
+
+" Strip tailing EOL whitespaces
+function! <SID>StripTailingWhitespaces()
+  "Save last search & cursor position
+  let _s=@/
+  let l=line(".")
+  let c=col(".")
+  %s/\s\+$//e
+  let @/=_s
+  call cursor(l,c)
+endfunction
+
+" vim:foldmethod=marker:foldlevel=0
