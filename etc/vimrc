@@ -90,6 +90,14 @@ nnoremap <leader>s :mksession<CR>
 "Open ag.vim
 nnoremap <leader>a :Ag
 
+
+"**CtrlP SETTINGS**
+let g:ctrlp_match_window='bottom,order:ttb'   "Match with ttb
+let g:ctrlp_switch_buffer=0         "Open files with buffer
+let g:ctrlp_working_path_mode=0     "Allow changes to cwd
+let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'  "CtrlP-ag utilisation
+
+
 "**COMPILER SPECIFIC**
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
