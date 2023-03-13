@@ -31,8 +31,6 @@ set termguicolors
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4
 " Smart-indenting at new-line, copy indents
 set smartindent autoindent
-"Simplify ESC-sequence
-inoremap jk <Esc>
 
 
 "**UI-CONF**
@@ -73,6 +71,24 @@ nnoremap ^ <nop>
 
 "Highlight last text
 nnoremap gV `[v`]
+
+
+"**LEADER SHORTCUTS**
+let mapleader=","     "Change leader
+"Simplify ESC-sequence
+inoremap jk <Esc>
+"Toggle GUNDO
+nnoremap <leader>u :GundoToggle<CR>
+
+"Edit vimrc/zshrc, Load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+"Save sessions
+nnoremap <leader>s :mksession<CR>
+"Open ag.vim
+nnoremap <leader>a :Ag
 
 "**COMPILER SPECIFIC**
 " Ex commands to run python3 on vim, use <F9> to run
