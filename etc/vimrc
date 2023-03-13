@@ -111,7 +111,7 @@ else
   let &t_EI="\<Esc>]50;CursorShape=0\x7"
 endif
 
-"Autographs - File Extensions
+"Autographs - Language Specific CONFIG
 augroup configgroup
   autocmd!
   autocmd VimEnter * highlight clear SignColumn
@@ -130,9 +130,28 @@ augroup configgroup
   autocmd FileType ruby setlocal shiftwidth=2
   autocmd FileType ruby setlocal softtabstop=2
   autocmd FileType ruby setlocal commentstring=#\ %s
+  
+  autocmd FileType python setlocal commentstring=#\ %s
+  autocmd BufEnter *.cls setlocal filetype=java
+  autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+  
+  autocmd BufEnter MakerFile setlocal noexpandtab
+  autocmd BufEnter *.sh setlocal tabstop=2
+  autocmd BufEnter *.sh setlocal shiftwidth=2
+  autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
 
 
 "**COMPILER SPECIFIC**
 " Ex commands to run python3 on vim, use <F9> to run
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+
+"**BACKUPS**
+set backup    "Enable backup support
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+
