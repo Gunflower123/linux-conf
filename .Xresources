@@ -93,6 +93,11 @@ URxvt.urlButton: 1
 #define S_cyan            #2aa198
 #define S_green           #859900
 
+! Color Definitions
+*.foreground: #93a1a1
+*.background: #141c21
+*.cursorColor: #afbfbf
+
 !! Color Scheme
 *.color0: #665C54
 *.color8: #928374
@@ -110,11 +115,6 @@ URxvt.urlButton: 1
 *.color14: #89B482
 *.color7: #D4BE98
 *.color15: #D4BE98
-
-! Color Definitions
-*.foreground: #93a1a1
-*.background: #141c21
-*.cursorColor: #afbfbf
 
 !! URLs
 ! https://linux.die.net/man/3/urxvtperl
