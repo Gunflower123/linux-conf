@@ -1,32 +1,6 @@
-!! Color Scheme
-*.color0: #665C54
-*.color8: #928374
-*.color1: #EA6962
-*.color9: #EA6962
-*.color2: #A9B665
-*.color10: #A9B665
-*.color3: #E78A4E
-*.color11: #D8A657
-*.color4: #7DAEA3
-*.color12: #7DAEA3
-*.color5: #D3869B
-*.color13: #D3869B
-*.color6: #89B482
-*.color14: #89B482
-*.color7: #D4BE98
-*.color15: #D4BE98
-
-! Color Definitions
-*.foreground: #93a1a1
-*.background: #141c21
-*.cursorColor: #afbfbf
-
 !! URxvt Appearance
 ! Font
-URxvt.font: xft:Iosevka:style=Regular:size=8
-URxvt.boldFont: xft:Iosevka:style=Bold:size=8
-URxvt.italicFont: xft:Iosevka:style=Italic:size=8
-URxvt.boldItalicfont: xft:Iosevka:style=Bold Italic:size=8
+URxvt*font:   xft:inconsolata:size=10:antialias=true
 ! Spacing
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
@@ -78,9 +52,35 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-u: perl:url-select:select_next
 
 !! Extensions
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: brave
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
+
+!! Solarised Colour-scheme for Xresources/Xdefaults
+
+
+!! Color Scheme
+*.color0: #665C54
+*.color8: #928374
+*.color1: #EA6962
+*.color9: #EA6962
+*.color2: #A9B665
+*.color10: #A9B665
+*.color3: #E78A4E
+*.color11: #D8A657
+*.color4: #7DAEA3
+*.color12: #7DAEA3
+*.color5: #D3869B
+*.color13: #D3869B
+*.color6: #89B482
+*.color14: #89B482
+*.color7: #D4BE98
+*.color15: #D4BE98
+
+! Color Definitions
+*.foreground: #93a1a1
+*.background: #141c21
+*.cursorColor: #afbfbf
 
 !! URLs
 ! https://linux.die.net/man/3/urxvtperl
