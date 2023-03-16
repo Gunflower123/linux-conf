@@ -27,8 +27,8 @@ pulseaudio 16.1-1
 Containing multiple config files for Linux programs
 
 # Xresouces
-https://github.com/marcuskrahl/urxvt-config/blob/master/Xresources
-https://gist.github.com/liangzan/1643690
+https://github.com/marcuskrahl/urxvt-config/blob/master/Xresources  
+https://gist.github.com/liangzan/1643690  
 
-Other resources
-https://www.askapache.com/linux/rxvt-xresources/
+Other resources  
+https://www.askapache.com/linux/rxvt-xresources/  
