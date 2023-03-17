@@ -1,4 +1,5 @@
 # Artix Linux Configurations
+Self-contained config files for back-up and continuous development for a Artix computer running dinit initialisation system, alongside a URxvt Tiling window-manager and VIM-based scripts. 
 
 ## Usage
 ## linux-conf  
