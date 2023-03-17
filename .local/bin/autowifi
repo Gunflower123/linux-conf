@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Script name: autowifi
+# Description: Automatically connect to wifi using wpa_supplicant
+# Dependencies: ip, wpa_supplicant, dhcpcd
+
