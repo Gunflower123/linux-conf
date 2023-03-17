@@ -90,6 +90,12 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>s :mksession<CR>
 "Open ag.vim
 nnoremap <leader>a :Ag
+
+"Copy-Paste to Clipboard
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 " }}}
 
 " CtrlP-SETTINGS {{{
