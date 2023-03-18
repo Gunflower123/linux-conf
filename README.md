@@ -3,7 +3,6 @@ Self-contained config files for back-up and continuous development for a Artix c
 
 ## Usage
 ## linux-conf  
-Base Artix installation with dinit system  
 `<Program> > /dev/null 2>&1 &`
 
 Safe mounting/dismounting
