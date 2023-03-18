@@ -13,10 +13,11 @@ if lspci -k | grep -q 'iwlwifi'; then
   if iw dev | grep -q 'wlan0' -a ifcongif -a | grep -Eq 'wlan0|DOWN'; then
     ip link set wlan0 up    #Set WiFi interface <UP>
     notify-send "Message: WiFi interface active"
-    /\
+    /\ 
   fi
   
 fi
     
 
-# Find 
+# Show connection
+[ -l ] iw dev wlan0 link
