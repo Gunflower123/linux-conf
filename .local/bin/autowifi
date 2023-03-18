@@ -2,9 +2,12 @@
 #
 # Script name: autowifi
 # Description: Automatically connect to wifi using wpa_supplicant
-# Dependencies: ip, wpa_supplicant, dhcpcd
+# Dependencies: net-tools, ip, wpa_supplicant, dhcpcd
 
 # Kill wifi process if running
 killall wpa_supplicant
+# Check driver status
+lspci -k | grep iwlwifi
+
 
 # Find 
