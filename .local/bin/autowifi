@@ -19,5 +19,5 @@ if lspci -k | grep -q 'iwlwifi'; then
 fi
     
 
-# Show connection
+# Show connection using 
 [ -l ] iw dev wlan0 link
