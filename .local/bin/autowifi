@@ -10,7 +10,7 @@ killall wpa_supplicant
 if lspci -k | grep 'iwlwifi'; then
   # Determine WiFi interface
   if iw dev | grep 'wlan0' -a ifcongif -a | grep -q 'wlan0'
-    ip link set wlan0 up
+    ip link set wlan0 up    #Set WiFi interface <UP>
   fi
   
 fi
