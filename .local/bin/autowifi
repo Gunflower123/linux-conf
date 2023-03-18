@@ -4,3 +4,7 @@
 # Description: Automatically connect to wifi using wpa_supplicant
 # Dependencies: ip, wpa_supplicant, dhcpcd
 
+# Kill wifi process if running
+killall wpa_supplicant
+
+# Find 
