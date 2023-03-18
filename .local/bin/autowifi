@@ -7,9 +7,9 @@
 # Kill wifi process if running
 killall wpa_supplicant
 # Check driver status
-if lspci -k | grep 'iwlwifi'; then
+if lspci -k | grep 'iwlwifi' &> /dev/null; then
   # Determine WiFi interface
-  if iw dev | grep 'wlan0' -a ifcongif -a | grep -q 'wlan0'; then
+  if iw dev | grep -q 'wlan0' -a ifcongif -a | grep -Eq 'wlan0|UP'; then
     ip link set wlan0 up    #Set WiFi interface <UP>
   fi
   
