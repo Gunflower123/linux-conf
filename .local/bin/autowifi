@@ -20,4 +20,4 @@ fi
     
 
 # Show connection using 
-[ -l ] iw dev wlan0 link
+[ -l "$1" ] iw dev "$1" link
