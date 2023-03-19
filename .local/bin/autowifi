@@ -2,7 +2,7 @@
 #
 # Script name: autowifi
 # Description: Automatically connects to wifi using wpa_supplicant
-# Dependencies: net-tools, ip, wpa_supplicant, dhcpcd
+# Dependencies: net-tools, base-devel, wpa_supplicant, dhcpcd
 
 DIR=/etc/wpa_supplicant/wpa_su
 # Kill wifi process if running
