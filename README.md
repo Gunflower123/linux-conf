@@ -14,7 +14,9 @@ pulseaudio 16.1-1
 
 ## Additional commands
 The following sends redirects output and error messages to `/dev/null`, whilst putting the process in the background:  
-`<Program> > /dev/null 2>&1 &`
+```
+<Program> > /dev/null 2>&1 &
+```
 
 The following set of code safely mounts a USB-stick, enters it with `chroot` and provides system wide environment, and script start-up:  
 ```
