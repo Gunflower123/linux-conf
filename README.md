@@ -3,18 +3,6 @@ Self-contained config files for back-up and continuous development for a Artix c
 
 ## Usage
 ## linux-conf  
-`<Program> > /dev/null 2>&1 &`
-
-Safe mounting/dismounting
-```
-mount --types proc /proc /mnt/proc  
-mount --rbind /sys /mnt/gentoo/sys  
-mount --make-rslave /mnt/gentoo/sys  
-mount --rbind /dev /mnt/gentoo/dev  
-mount --make-rslave /mnt/gentoo/dev  
-mount --bind /run /mnt/gentoo/run  
-mount --make-slave /mnt/gentoo/run  
-```
 
 ## Programs:
 opencv  
@@ -24,8 +12,23 @@ brave
 ## Required packages:  
 pulseaudio 16.1-1  
 
-Containing multiple config files for Linux programs
+## Additional commands
+The following sends redirects output and error messages to `/dev/null`, whilst putting the process in the background:  
+`<Program> > /dev/null 2>&1 &`
 
+The following set of code safely mounts a USB-stick, enters it with `chroot` and provides system wide environment, and script start-up:  
+```
+mount --types proc /proc /mnt/usbstick/proc  
+mount --rbind /sys /mnt/usbstick/sys  
+mount --make-rslave /mnt/usbstick/sys  
+mount --rbind /dev /mnt/usbstick/dev  
+mount --make-rslave /mnt/usbstick/dev  
+mount --bind /run /mnt/usbstick/run  
+mount --make-slave /mnt/usbstick/run  
+
+chroot /mnt/usbstick /bin/bash
+source /etc/profile
+```
 # Xresouces
 https://github.com/marcuskrahl/urxvt-config/blob/master/Xresources  
 https://gist.github.com/liangzan/1643690  
