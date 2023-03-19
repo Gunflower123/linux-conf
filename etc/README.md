@@ -7,3 +7,6 @@ These configuration files are used for local settings, and is separated into the
 * **locale.conf**
 * **locale.gen**
 * **vconsole.conf**
+
+## wpa_supplicant
+This file contains the certificates and public keys for accessing Local Area Networks (LAN), and contains the configuration file that will be used to secure connections. A bash script called **autowifi** located in `$HOME/.local/` contains these programs.
