@@ -1,0 +1,77 @@
+! ~/.Xdefaults
+! xhh config for terminals e.g. urxvt
+! For the latest version, check
+! http://github.com/cooky/dotfiles_archlinux/blob/master/.Xdefaults
+! normal settings
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+!!Terminal color scheme
+*foreground:     rgb:dd/dd/dd
+*background:     rgb:22/22/22
+!black
+*color0:         rgb:19/19/19
+*color8:         rgb:25/25/25
+!red
+*color1:         rgb:80/32/32
+*color9:         rgb:98/2b/2b
+!green
+*color2:         rgb:5b/76/2f
+*color10:        rgb:89/b8/3f
+!brown/yellow
+*color3:         rgb:aa/99/43
+*color11:        rgb:ef/ef/60
+!blue
+*color4:         rgb:32/4c/80
+*color12:        rgb:2b/4f/98
+!magenta
+*color5:         rgb:70/6c/9a
+*color13:        rgb:82/6a/b1
+!cyan
+*color6:         rgb:92/b1/9e
+*color14:        rgb:a1/cd/cd
+!white
+*color7:         rgb:ff/ff/ff
+*color15:        rgb:dd/dd/dd  
+
+!!URxvt settings
+! Spacing
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 240x84
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+!Transparency settings
+URxvt.inheritPixmap: true
+URxvt.transparent: true
+URxvt.tintColor: #000 
+URxvt.shading: 45
+
+! other settings
+URxvt.geometry: 90x25+180+200
+URxvt.cursorColor:red3
+URxvt.scrollBar:False
+URxvt.saveLines:3000
+URxvt.preeditType:Root
+
+! open URL in browser
+URxvt.urlLauncher: google-chrome
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: matcher
+
+! normal font
+!URxvt.font:xft:YaHei Consolas Hybrid:pixelsize=14:antialias=true,xft:Droid Sans Fallback:pixelsize=12:antialias=true
+!URxvt.font:xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true,xft:Droid Sans Fallback:pixelsize=12:antialias=true
+!URxvt.font:xft:DejaVu Sans Mono:pixelsize=13:antialias=true,xft:Droid Sans Fallback:pixelsize=12:antialias=true
+URxvt.font:xft:Monaco:pixelsize=13:antialias=true,xft:WenQuanYi Micro Hei Mono:pixelsize=13:antialias=true
+!URxvt.font:xft:ProFont:pixelsize=13:antialias=true,xft:WenQuanYi ZenHei:pixelsize=15:antialias=true
+
+! bold font
+!URxvt.boldFont:xft:YaHei Consolas Hybrid:pixelsize=14:Bold:antialias=true,xft:Droid Sans Fallback:pixelsize=12:Bold:antialias=true
+!URxvt.boldFont:xft:Bitstream Vera Sans Mono:pixelsize=13:Bold:antialias=true,xft:Droid Sans Fallback:pixelsize=12:Bold:antialias=true
+!URxvt.boldFont:xft:DejaVu Sans Mono:pixelsize=13:Bold:antialias=true,xft:Droid Sans Fallback:pixelsize=12:Bold:antialias=true URxvt.boldFont:xft:Monaco:pixelsize=13:Bold:antialias=true,xft:WenQuanYi Micro Hei Mono:pixelsize=13:Bold:antialias=true
+!URxvt.boldFont:xft:ProFont:pixelsize=13:antialias=true,xft:WenQuanYi ZenHei:pixelsize=15:antialias=true
