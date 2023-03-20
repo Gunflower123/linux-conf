@@ -6,7 +6,9 @@ Self-contained config files for back-up and continuous development for a Artix c
 The current arrangement signs-in without automatically setting up an Xorg server due to the necessity to debug if crashes occur. Additional packages must be installed such as,
 * **xorg-xwininfo** which is used to configure window information utility for X servers
 
-  
+
+i3-gaps: https://github.com/mathisen99/i3-gaps/blob/master/config
+
 ## Programs:
 opencv  
 matlab  
