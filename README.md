@@ -8,6 +8,7 @@ The current arrangement signs-in without automatically setting up an Xorg server
 
 
 i3-gaps: https://github.com/mathisen99/i3-gaps/blob/master/config
+More: https://github.com/sarve-sh/i3wm-nord/blob/main/i3/config
 
 ## Programs:
 opencv  
