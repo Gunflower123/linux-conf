@@ -4,22 +4,33 @@
 # Description: Automatically connects to wifi using wpa_supplicant
 # Dependencies: net-tools, base-devel, wpa_supplicant, dhcpcd
 
-DIR=/etc/wpa_supplicant/wpa_su
-# Kill wifi process if running
-killall wpa_supplicant
-# Check driver status
-[ lspci -k | grep -q 'iwlwifi' ] && notify-send "Message: iwlwifi Kernel-driver present"
+#!/bin/bash
 
-# Determine WiFi interface
-if iw dev | grep -q 'wlan0' -a ifcongif -a | grep -Eq 'wlan0|DOWN'; then
-  ip link set wlan0 up    #Set WiFi interface <UP>
-  notify-send "Message: WiFi interface active"
-  #[-l "$1" "$2" ] && iw dev "$1" connect "$2" 
+# Check if argument is provided and directory exists
+[ -z "$1" ] || [ ! -d "$1" ] && echo "Please provide a valid directory path as an argument" && exit 1
+
+# Check if wifi.conf file exists
+[ ! -f "$1/wifi.conf" ] && echo "wifi.conf file does not exist in the directory" && exit 1
+
+# Check if iwlwifi driver is present
+modinfo iwlwifi &> /dev/null || echo "iwlwifi driver is not present" && exit 1
+
+# Check if wifi interface is available
+if ! iw dev wlan0 info &> /dev/null; then
+  echo "WiFi interface is not available"
+  
+  # Check if wlan0 interface is down and bring it up
+  ip link show wlan0 up &> /dev/null || (echo "Bringing up the wlan0 interface"; sudo ip link set wlan0 up)
 fi
 
-# Show connection using 
-[ -l "$1" ] && iw dev "$1" link || notify-send "Message: Not Connected."
-# Connect using wpa_supplicant
-[ iw dev "$1" link -eq "Not Connected." ] && wpa_supplicant -B -c "$DIR" -i "$1" && notify-send "Successful WiFi-Protected Access Connection."
-# Use Dynamic Host Configuration Protocol (DHCP) connection
-dhcpcd "$1" && notify-send "Successul Dynamic Host Configuration Protocol Connection."
+# Kill any existing instances of wpa_supplicant
+sudo killall wpa_supplicant &> /dev/null
+
+# Get wifi network name and password from wifi.conf file
+ssid=$(grep -Po "(?<=ssid=\").*(?=\")" "$1/wifi.conf")
+psk=$(grep -Po "(?<=psk=\").*(?=\")" "$1/wifi.conf")
+
+# Connect to wifi network using wpa_supplicant
+wpa_supplicant -B -i wlan0 -c <(wpa_passphrase "$ssid" "$psk")
+
+echo "Connected to $ssid"
