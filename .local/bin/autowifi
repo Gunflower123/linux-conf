@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Script name: autowifi
+# Description: Automatically connects to wifi using wpa_supplicant
+# Dependencies: net-tools, base-devel, wpa_supplicant, dhcpcd
+
+DIRECTORY="$1"
+
+# Check if argument is provided and directory exists
+[ -z "$1" ] || [ ! -d "$1" ] && notify-send "Message: Please provide a valid directory path as an argument" && exit 1
+
+# Check if wpa_supplicant.conf file exists
+[ ! -f "$DIRECTORY/wpa_supplicant.conf" ] && notify-send "Message: wpa_supplicant.conf file does not exist in the directory" && exit 1
+
+# Check if iwlwifi driver is present
+modinfo iwlwifi &> /dev/null || echo "iwlwifi driver is not present" && exit 1
+
+# Check if wifi interface is available
+if ! iw dev wlan0 info &> /dev/null; then
+  echo "WiFi interface is not available"
+  
+  # Check if wlan0 interface is down and bring it up
+  ip link show wlan0 up &> /dev/null || (echo "Bringing up the wlan0 interface"; sudo ip link set wlan0 up)
+fi
+
+# Kill any existing instances of wpa_supplicant
+sudo killall wpa_supplicant &> /dev/null
+
+# Get wifi network name and password from wifi.conf file
+ssid=$(grep -Po "(?<=ssid=\").*(?=\")" "$1/wifi.conf")
+psk=$(grep -Po "(?<=psk=\").*(?=\")" "$1/wifi.conf")
+
+# Connect to wifi network using wpa_supplicant
+wpa_supplicant -B -i wlan0 -c <(wpa_passphrase "$ssid" "$psk")
+
+echo "Connected to $ssid"
