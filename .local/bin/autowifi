@@ -4,13 +4,13 @@
 # Description: Automatically connects to wifi using wpa_supplicant
 # Dependencies: net-tools, base-devel, wpa_supplicant, dhcpcd
 
-#!/bin/bash
+DIRECTORY="$1"
 
 # Check if argument is provided and directory exists
-[ -z "$1" ] || [ ! -d "$1" ] && echo "Please provide a valid directory path as an argument" && exit 1
+[ -z "$1" ] || [ ! -d "$1" ] && notify-send "Message: Please provide a valid directory path as an argument" && exit 1
 
-# Check if wifi.conf file exists
-[ ! -f "$1/wifi.conf" ] && echo "wifi.conf file does not exist in the directory" && exit 1
+# Check if wpa_supplicant.conf file exists
+[ ! -f "$DIRECTORY/wpa_supplicant.conf" ] && notify-send "Message: wpa_supplicant.conf file does not exist in the directory" && exit 1
 
 # Check if iwlwifi driver is present
 modinfo iwlwifi &> /dev/null || echo "iwlwifi driver is not present" && exit 1
