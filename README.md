@@ -7,8 +7,9 @@ The current arrangement signs-in without automatically setting up an Xorg server
 * **xorg-xwininfo** which is used to configure window information utility for X servers
 
 
-i3-gaps: https://github.com/mathisen99/i3-gaps/blob/master/config
-More: https://github.com/sarve-sh/i3wm-nord/blob/main/i3/config
+i3-gaps: https://github.com/mathisen99/i3-gaps/blob/master/config  
+More: https://github.com/sarve-sh/i3wm-nord/blob/main/i3/config  
+Missing firmware for Intel DSP Codec: https://github.com/thesofproject/sof-bin/
 
 ## Programs:
 opencv  
