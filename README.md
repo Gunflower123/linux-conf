@@ -16,8 +16,8 @@ opencv
 matlab  
 brave  
 
-## Required packages:  
-pulseaudio 16.1-1  
+## Optional packages:  
+pulseaudio 16.1-1  / pipewire
 
 ## Additional commands
 The following sends redirects output and error messages to `/dev/null`, whilst putting the process in the background:  
