@@ -31,6 +31,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+
 #Set GB Keymaps
 setxkbmap gb
 
@@ -38,3 +39,11 @@ setxkbmap gb
 picom &
 exec i3
 
+#Retore ALSA settings
+#sudo alsactl -f /var/lib/alsa/asound.state restore
+
+#Start sxhkd volume control
+sxhkd &
+
+#Auto-connect network interface
+#sudo autowifi.sh wlan0
