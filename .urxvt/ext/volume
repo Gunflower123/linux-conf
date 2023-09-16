@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+# Get the action (F2 or F3) from the command line argument
+my $action = $ARGV[0];
+
+# Define your audio device name (usage: `amixer scontrols`)
+my $audio_device = "Master";
+
+# Define the step size for volume adjustments
+my $step_size = 5; # Adjust this to your preference
+
+if ($event->{keysym} eq "F2") {
+    # Decrease volume using amixer or any other preferred method
+    system("amixer -D sset $audio_device $step_size%- unmute");
+} elsif ($event->{keysym} eq "F3") {
+    # Increase volume using amixer or any other preferred method
+    system("amixer -q sset $audio_device $step_size%+ unmute");
+}
+
+
+#
+## Determine the amixer command based on the action
+#my $amixer_command;
+#if ($action eq "F2") {
+#    $amixer_command = "amixer -q sset $audio_device $step_size%- unmute";
+#} elsif ($action eq "F3") {
+#    $amixer_command = "amixer -q sset $audio_device $step_size%+ unmute";
+#}
